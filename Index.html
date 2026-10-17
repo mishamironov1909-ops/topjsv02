@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MY TOP OF JUNIOR SHONVISION — SEASON 02</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;800&display=swap">
+<style>
+:root{--navy:#191932;--peri:#7181C9;--purple:#4039A1;--teal:#00636B;--green:#38A878;--card:#222249;--line:rgba(113,129,201,.28);--txt:#eef0ff;--mut:#aab2e0;
+--fd:'Unbounded','Trebuchet MS',sans-serif;--fb:'Manrope','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--txt);font:400 16px/1.5 var(--fb);overflow-x:hidden;min-height:100vh}
+/* Decorative organic shapes around the edges */
+.blob{position:fixed;z-index:-1;pointer-events:none}
+.b1{width:60vw;height:60vw;max-width:760px;max-height:760px;left:-22vw;top:-20vw;background:radial-gradient(circle at 60% 60%,#5b4fd0,var(--purple) 55%,transparent 72%);border-radius:62% 38% 55% 45%/50% 60% 40% 50%;opacity:.9}
+.b2{width:46vw;height:46vw;max-width:600px;max-height:600px;right:-18vw;top:6vh;background:radial-gradient(circle at 40% 50%,var(--peri),#4a5aa8 55%,transparent 72%);border-radius:45% 55% 40% 60%/60% 40% 60% 40%;opacity:.55}
+.b3{width:55vw;height:55vw;max-width:700px;max-height:700px;right:-20vw;bottom:-22vw;background:radial-gradient(circle at 40% 40%,#0a8a94,var(--teal) 55%,transparent 72%);border-radius:55% 45% 60% 40%/45% 55% 45% 55%;opacity:.85}
+.b4{width:30vw;height:30vw;max-width:380px;max-height:380px;left:-10vw;bottom:8vh;background:radial-gradient(circle,var(--green),transparent 70%);border-radius:40% 60% 50% 50%;opacity:.45}
+a{color:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:2px;border-radius:8px}
+header.nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:rgba(25,25,50,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav b{font:800 13px var(--fd);letter-spacing:.04em}
+.nav nav{display:flex;gap:18px;font-weight:600;font-size:14px}
+.nav nav a{text-decoration:none;color:var(--mut)}.nav nav a:hover{color:#fff}
+section{padding:70px 5vw;max-width:1280px;margin:0 auto}
+h2{font:800 clamp(20px,3vw,30px) var(--fd);margin:0 0 6px}
+.sub{color:var(--mut);margin:0 0 26px}
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px}
+.brand{font-weight:800;letter-spacing:.22em;color:var(--peri);font-size:13px}
+.hero h1{font:800 clamp(30px,7vw,78px)/1.05 var(--fd);margin:0;max-width:15ch;text-shadow:0 6px 40px rgba(0,0,0,.5)}
+.season{display:inline-block;background:linear-gradient(90deg,var(--purple),var(--peri));padding:8px 26px;border-radius:99px;font:800 clamp(14px,2vw,22px) var(--fd);letter-spacing:.2em;box-shadow:0 8px 30px rgba(64,57,161,.6)}
+.hero h3{margin:6px 0 0;font:500 clamp(18px,2.4vw,26px) var(--fd);color:var(--green)}
+.hero p{max-width:560px;color:var(--mut);margin:0}
+.tag{font-size:12px;letter-spacing:.14em;color:var(--peri);font-weight:800}
+.btn{font:800 13px var(--fb);letter-spacing:.08em;border:1px solid var(--line);background:var(--card);color:var(--txt);padding:11px 18px;border-radius:12px;cursor:pointer;transition:.2s}
+.btn:hover:not(:disabled){transform:translateY(-2px);border-color:var(--peri);box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.pri{background:linear-gradient(90deg,var(--purple),#5a52d6);border-color:transparent}
+.btn.grn{background:var(--green);color:#0c2a1e;border-color:transparent}
+.btn.dng:hover{border-color:#e0707a}
+.btn.big{padding:17px 38px;font-size:16px;border-radius:99px}
+.sm{padding:7px 11px;font-size:11px;border-radius:9px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.panel{background:rgba(34,34,73,.85);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.panel h3{font:800 14px var(--fd);margin:0 0 14px;letter-spacing:.04em}
+input[type=text],input[type=search]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#15152c;color:var(--txt);font:600 15px var(--fb)}
+label{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--mut);display:block;margin:12px 0 5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:14px}
+.cc{background:#2a2a58;border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:9px;align-items:center;text-align:center;transition:.2s}
+.cc:hover{border-color:var(--peri)}
+.cc b{font-size:14px}
+.flag{width:60px;aspect-ratio:3/2;object-fit:cover;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,.45);background:#333;flex:none}
+.cc .flag{width:84px}
+.flag.fb{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--purple),var(--teal));font:800 12px var(--fb);color:#fff}
+.count{font-weight:800;color:var(--green);letter-spacing:.08em;font-size:13px;margin-bottom:10px}
+ol.rank{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rank li{display:flex;align-items:center;gap:10px;background:#2a2a58;border:1px solid var(--line);border-radius:14px;padding:8px 10px;cursor:grab;transition:.15s}
+.rank li.drag{opacity:.4}.rank li.over{border-color:var(--green);transform:scale(1.02)}
+.rank .n{width:30px;height:30px;border-radius:50%;background:var(--purple);display:grid;place-items:center;font:800 13px var(--fd);flex:none}
+.rank .nm{flex:1;font-weight:700}
+.rank .grip{color:var(--mut);font-size:18px}
+.ib{background:#15152c;border:1px solid var(--line);color:var(--txt);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:14px}
+.ib:hover:not(:disabled){border-color:var(--peri)}.ib:disabled{opacity:.3;cursor:not-allowed}
+.empty{text-align:center;padding:34px 14px;border:2px dashed var(--line);border-radius:18px;color:var(--mut)}
+.empty b{display:block;font:800 15px var(--fd);color:var(--txt);margin-bottom:6px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.badge{display:inline-block;background:var(--teal);padding:4px 12px;border-radius:99px;font-size:12px;font-weight:800;margin-bottom:8px}
+/* Poster preview (sized with container units so it scales) */
+.pwrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+.poster{container-type:inline-size;width:min(100%,460px);aspect-ratio:4/5;position:relative;overflow:hidden;background:#191932;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.55);display:flex;flex-direction:column;padding:6cqw 7cqw}
+.poster .p1{position:absolute;width:70cqw;height:70cqw;left:-25cqw;top:-25cqw;background:radial-gradient(circle,#5b4fd0,var(--purple) 55%,transparent 72%);border-radius:60% 40% 55% 45%}
+.poster .p2{position:absolute;width:65cqw;height:65cqw;right:-25cqw;bottom:-25cqw;background:radial-gradient(circle,#0a8a94,var(--teal) 55%,transparent 72%);border-radius:45% 55% 40% 60%}
+.poster .p3{position:absolute;width:30cqw;height:30cqw;left:-10cqw;bottom:10cqw;background:radial-gradient(circle,var(--green),transparent 70%);opacity:.5;border-radius:50%}
+.poster>*{position:relative}
+.ph{text-align:center}
+.ph small{font-size:2.6cqw;letter-spacing:.2em;color:var(--peri);font-weight:800}
+.ph h4{font:800 6.6cqw/1.1 var(--fd);margin:1.5cqw 0}
+.ph .season{font-size:2.8cqw;padding:1.2cqw 5cqw}
+.pt{font:800 4cqw var(--fd);margin-top:2.5cqw;overflow-wrap:anywhere}
+.pa{font-size:3cqw;color:var(--peri);font-weight:700}
+.pl{list-style:none;margin:3cqw 0 0;padding:0;flex:1;display:grid;gap:1.2cqw;align-content:center;grid-auto-flow:column;min-height:0}
+.pl li{display:flex;align-items:center;gap:2cqw;background:rgba(255,255,255,.07);border-radius:2cqw;padding:0 2cqw;font-weight:800;min-width:0}
+.pl .n{width:4.6cqw;height:4.6cqw;border-radius:50%;background:var(--purple);display:grid;place-items:center;font-size:2.4cqw;flex:none}
+.pl .flag{width:7cqw}
+.pl span.t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pf{text-align:center;font-size:2.4cqw;letter-spacing:.2em;color:var(--green);font-weight:800;margin-top:2cqw}
+.pe{flex:1;display:grid;place-items:center;color:var(--mut);text-align:center;font-size:3.2cqw}
+.saved{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.sv{background:rgba(34,34,73,.9);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.sv h3{margin:0;font:800 15px var(--fd);overflow-wrap:anywhere}
+.sv p{margin:0;color:var(--mut);font-size:13px}
+.mini{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.mini .flag{width:34px}
+.row{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+#toasts{position:fixed;right:16px;bottom:16px;z-index:100;display:grid;gap:8px;max-width:min(92vw,360px)}
+.toast{background:#2a2a58;border:1px solid var(--peri);border-left:6px solid var(--green);padding:12px 16px;border-radius:12px;font-weight:700;font-size:14px;box-shadow:0 12px 30px rgba(0,0,0,.5);animation:in .25s}
+.toast.err{border-left-color:#e0707a}
+@keyframes in{from{transform:translateY(14px);opacity:0}}
+#modal{position:fixed;inset:0;z-index:200;background:rgba(10,10,25,.75);display:grid;place-items:center;padding:16px}
+#modal[hidden]{display:none}
+.mb{background:var(--card);border:1px solid var(--peri);border-radius:20px;padding:24px;width:min(100%,420px);box-shadow:0 30px 80px #000}
+.mb h3{margin:0 0 8px;font:800 16px var(--fd)}.mb p{margin:0 0 14px;color:var(--mut)}
+.mb .row{justify-content:flex-end;margin-top:16px}
+footer{text-align:center;color:var(--mut);padding:30px 5vw 50px;font-size:13px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}.nav nav{gap:10px;font-size:12px}section{padding:50px 5vw}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+<header class="nav"><b>JUNIOR SHONVISION 02</b>
+<nav aria-label="Main navigation"><a href="#builder">Builder</a><a href="#poster">Poster</a><a href="#saved">Saved</a></nav></header>
+
+<main>
+<section class="hero" id="top">
+  <div class="brand">JUNIOR SHONVISION 02 — BOO!</div>
+  <h1>MY TOP OF JUNIOR SHONVISION</h1>
+  <span class="season">SEASON 02</span>
+  <h3>Create your own ranking!</h3>
+  <p>Choose your favorite countries, build your personal TOP, save your rankings, and download beautiful posters to share with everyone.</p>
+  <button class="btn pri big" id="cta">CREATE YOUR TOP</button>
+  <div class="tag">CREATE YOUR TOP. SAVE YOUR RANKING. SHARE YOUR STYLE.</div>
+</section>
+
+<section id="builder">
+  <h2>Build your TOP</h2>
+  <p class="sub">Pick any countries from the 13 participants and put them in your order. Drag rows or use the arrow buttons.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>AVAILABLE COUNTRIES</h3>
+      <label for="search" class="sr" style="margin-top:0">SEARCH COUNTRIES</label>
+      <input type="search" id="search" placeholder="SEARCH COUNTRIES..." autocomplete="off">
+      <div class="cards" id="avail"></div>
+    </div>
+    <div class="panel">
+      <h3>MY RANKING</h3>
+      <div id="editbadge"></div>
+      <label for="author" style="margin-top:0">YOUR NAME OR NICKNAME</label>
+      <input type="text" id="author" maxlength="40" placeholder="e.g. MyNickname">
+      <label for="title">RANKING TITLE</label>
+      <input type="text" id="title" maxlength="50" placeholder="e.g. My Season 02 Favorites">
+      <div class="count" id="counter" style="margin-top:16px" aria-live="polite"></div>
+      <div id="rankbox"></div>
+      <div class="tools">
+        <button class="btn grn" data-act="save">SAVE MY TOP</button>
+        <button class="btn" data-act="random">RANDOMIZE TOP</button>
+        <button class="btn" data-act="copy">COPY TOP</button>
+        <button class="btn" data-act="new">NEW TOP</button>
+        <button class="btn dng" data-act="reset">RESET TOP</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="poster">
+  <h2>POSTER PREVIEW</h2>
+  <p class="sub">Updates live as you edit. The PNG is 1080 × 1350 pixels.</p>
+  <div class="pwrap">
+    <div class="poster" id="prev" aria-label="Poster preview"></div>
+    <button class="btn pri big" data-act="download">DOWNLOAD MY TOP</button>
+  </div>
+</section>
+
+<section id="saved">
+  <h2>MY SAVED TOPS</h2>
+  <p class="sub">Saved only in this browser (localStorage). Use JSON export to back up or move them to another device.</p>
+  <div class="tools" style="margin:0 0 18px">
+    <button class="btn" data-act="export">EXPORT JSON</button>
+    <button class="btn" data-act="import">IMPORT JSON</button>
+    <input type="file" id="file" accept="application/json,.json" hidden>
+  </div>
+  <div class="saved" id="savedlist"></div>
+</section>
+</main>
+<footer>JUNIOR SHONVISION 02 — BOO! · Fan-made ranking tool. Your data stays in your browser.</footer>
+
+<div id="toasts" role="status" aria-live="polite"></div>
+<div id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mt">
+  <form class="mb" id="mform"><h3 id="mt"></h3><p id="mp"></p>
+  <input type="text" id="mi" maxlength="50" aria-label="Value">
+  <div class="row"><button type="button" class="btn" id="mc">CANCEL</button><button type="submit" class="btn pri" id="mo">OK</button></div></form>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------- Data ---------- */
+var COUNTRIES=[["tr","Turkey"],["au","Australia"],["ua","Ukraine"],["pl","Poland"],["pa","Panama"],["xk","Kosovo"],["mv","Maldives"],["jp","Japan"],["hr","Croatia"],["fr","France"],["vn","Vietnam"],["ar","Argentina"],["il","Israel"]];
+var NAME={};COUNTRIES.forEach(function(c){NAME[c[0]]=c[1];});
+var K_SAVED="jsv02_saved",K_DRAFT="jsv02_draft";
+var state={ids:[],author:"",title:"",editingId:null};
+var saved=[];
+var $=function(s){return document.querySelector(s);};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function flagUrl(c,w){return"https://flagcdn.com/w"+(w||160)+"/"+c+".png";}
+function flagHTML(c){return'<img class="flag" src="'+flagUrl(c)+'" alt="Flag of '+esc(NAME[c])+'" onerror="window.__flagFail(this)">';}
+var failToastShown=false;
+window.__flagFail=function(img){
+  var s=document.createElement("span");s.className="flag fb";s.textContent=(img.src.match(/\/([a-z]{2})\.png/)||[0,"??"])[1].toUpperCase();
+  s.setAttribute("role","img");s.setAttribute("aria-label",img.alt);
+  if(img.parentNode)img.parentNode.replaceChild(s,img);
+  if(!failToastShown){failToastShown=true;toast("Flag image failed to load. A placeholder is shown instead.",1);}
+};
+
+/* ---------- Storage (safe) ---------- */
+function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){if(!store.warned){store.warned=true;toast("Browser storage is unavailable. Your data will not be remembered.",1);}return false;}}
+function load(k){try{var r=localStorage.getItem(k);return r?JSON.parse(r):null;}catch(e){return null;}}
+function cleanIds(a){var out=[];if(Array.isArray(a))a.forEach(function(x){if(typeof x==="string"&&NAME[x]&&out.indexOf(x)<0)out.push(x);});return out;}
+function uid(){return"t"+Date.now().toString(36)+Math.random().toString(36).slice(2,7);}
+function loadAll(){
+  var s=load(K_SAVED);saved=[];
+  if(Array.isArray(s))s.forEach(function(r){
+    if(!r||typeof r!=="object")return;var ids=cleanIds(r.countries);if(!ids.length)return;
+    saved.push({id:typeof r.id==="string"?r.id:uid(),title:String(r.title||"Untitled TOP").slice(0,50),author:String(r.author||"").slice(0,40),countries:ids,updated:+r.updated||Date.now()});
+  });
+  var d=load(K_DRAFT);
+  if(d&&typeof d==="object"){state.ids=cleanIds(d.ids);state.author=String(d.author||"").slice(0,40);state.title=String(d.title||"").slice(0,50);
+    state.editingId=saved.some(function(r){return r.id===d.editingId;})?d.editingId:null;}
+}
+function persistSaved(){return store(K_SAVED,saved);}
+function persistDraft(){store(K_DRAFT,state);}
+
+/* ---------- UI helpers ---------- */
+function toast(msg,err){
+  var d=document.createElement("div");d.className="toast"+(err?" err":"");d.textContent=msg;$("#toasts").appendChild(d);
+  setTimeout(function(){d.remove();},3800);
+}
+/* Modal returns a Promise: true/false for confirm, string/null for prompt */
+function modal(o){
+  return new Promise(function(res){
+    var m=$("#modal"),inp=$("#mi"),prev=document.activeElement;
+    $("#mt").textContent=o.title;$("#mp").textContent=o.text||"";
+    inp.hidden=!o.input;inp.value=o.value||"";inp.placeholder=o.placeholder||"";
+    $("#mo").textContent=o.ok||"OK";$("#mc").textContent="CANCEL";
+    m.hidden=false;(o.input?inp:$("#mo")).focus();
+    function done(v){m.hidden=true;$("#mform").onsubmit=null;$("#mc").onclick=null;document.removeEventListener("keydown",key);if(prev&&prev.focus)prev.focus();res(v);}
+    function key(e){if(e.key==="Escape")done(o.input?null:false);}
+    document.addEventListener("keydown",key);
+    $("#mform").onsubmit=function(e){e.preventDefault();if(o.input){var v=inp.value.trim();if(!v){toast("Please enter a value.",1);return;}done(v);}else done(true);};
+    $("#mc").onclick=function(){done(o.input?null:false);};
+  });
+}
+function download(blob,name){
+  var a=document.createElement("a"),u=URL.createObjectURL(blob);a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1500);
+}
+function shown(){return{title:state.title.trim()||"My Personal TOP",author:state.author.trim()||"Anonymous"};}
+
+/* ---------- Rendering ---------- */
+function renderAvail(){
+  var q=$("#search").value.trim().toLowerCase(),h="";
+  COUNTRIES.forEach(function(c){
+    if(q&&c[1].toLowerCase().indexOf(q)<0)return;
+    var inn=state.ids.indexOf(c[0])>=0;
+    h+='<div class="cc">'+flagHTML(c[0])+'<b>'+c[1]+'</b><button class="btn sm '+(inn?'':'pri')+'" data-add="'+c[0]+'" '+(inn?'disabled':'')+' aria-label="Add '+c[1]+' to my ranking">'+(inn?'ADDED':'+ ADD')+'</button></div>';
+  });
+  $("#avail").innerHTML=h||'<div class="empty" style="grid-column:1/-1"><b>NO MATCHES</b>No country matches your search.</div>';
+}
+function renderRank(){
+  $("#counter").textContent=state.ids.length+" / 13 COUNTRIES SELECTED";
+  if(!state.ids.length){$("#rankbox").innerHTML='<div class="empty"><b>NO COUNTRIES SELECTED YET</b>Choose countries from the list to start building your TOP.</div>';return;}
+  var h='<ol class="rank" id="ranklist">';
+  state.ids.forEach(function(id,i){
+    h+='<li draggable="true" data-i="'+i+'"><span class="grip" aria-hidden="true">⠿</span><span class="n">'+(i+1)+'</span>'+flagHTML(id)+'<span class="nm">'+NAME[id]+'</span>'
+     +'<button class="ib" data-mv="up" aria-label="Move '+NAME[id]+' up" '+(i===0?'disabled':'')+'>▲</button>'
+     +'<button class="ib" data-mv="down" aria-label="Move '+NAME[id]+' down" '+(i===state.ids.length-1?'disabled':'')+'>▼</button>'
+     +'<button class="ib" data-rm="'+id+'" aria-label="Remove '+NAME[id]+'">✕</button></li>';
+  });
+  $("#rankbox").innerHTML=h+'</ol>';
+}
+function renderBadge(){
+  var r=saved.find(function(x){return x.id===state.editingId;});
+  $("#editbadge").innerHTML=r?'<span class="badge">EDITING: '+esc(r.title)+'</span>':"";
+}
+function renderPreview(){
+  var n=state.ids.length,s=shown(),cols=n>7?2:1,rows=Math.ceil(n/cols)||1;
+  var h='<div class="p1"></div><div class="p2"></div><div class="p3"></div><div class="ph"><small>JUNIOR SHONVISION 02 — BOO!</small><h4>MY TOP OF JUNIOR SHONVISION</h4><span class="season">SEASON 02</span><div class="pt">'+esc(s.title)+'</div><div class="pa">by '+esc(s.author)+'</div></div>';
+  if(!n)h+='<div class="pe">Add countries to see your poster here.</div>';
+  else{
+    h+='<ol class="pl" style="grid-template-rows:repeat('+rows+',1fr);grid-template-columns:repeat('+cols+',1fr);font-size:'+(n>7?3:3.8)+'cqw">';
+    state.ids.forEach(function(id,i){h+='<li><span class="n">'+(i+1)+'</span>'+flagHTML(id)+'<span class="t">'+NAME[id]+'</span></li>';});
+    h+='</ol>';
+  }
+  $("#prev").innerHTML=h+'<div class="pf">JUNIOR SHONVISION 02 — BOO!</div>';
+}
+function renderSaved(){
+  if(!saved.length){$("#savedlist").innerHTML='<div class="empty" style="grid-column:1/-1"><b>NO SAVED TOPS YET</b>Build a ranking and press SAVE MY TOP.</div>';return;}
+  $("#savedlist").innerHTML=saved.map(function(r){
+    var m=r.countries.slice(0,6).map(flagHTML).join("")+(r.countries.length>6?'<b>+'+(r.countries.length-6)+'</b>':"");
+    return'<article class="sv" data-id="'+r.id+'"><h3>'+esc(r.title)+'</h3><p>by '+esc(r.author||"Anonymous")+' · '+r.countries.length+' '+(r.countries.length===1?'country':'countries')+'</p><div class="mini">'+m+'</div>'
+     +'<div class="row"><button class="btn sm pri" data-sv="open">OPEN</button><button class="btn sm" data-sv="edit">EDIT</button><button class="btn sm" data-sv="rename">RENAME</button><button class="btn sm dng" data-sv="delete">DELETE</button></div></article>';
+  }).join("");
+}
+function renderAll(){renderAvail();renderRank();renderBadge();renderPreview();renderSaved();}
+function changed(){persistDraft();renderAvail();renderRank();renderBadge();renderPreview();}
+
+/* ---------- Ranking actions ---------- */
+function move(from,to){
+  if(to<0||to>=state.ids.length||from===to)return;
+  var x=state.ids.splice(from,1)[0];state.ids.splice(to,0,x);changed();
+}
+function addCountry(id){if(NAME[id]&&state.ids.indexOf(id)<0){state.ids.push(id);changed();}}
+function removeCountry(id){state.ids=state.ids.filter(function(x){return x!==id;});changed();}
+function randomize(){
+  if(state.ids.length<2){toast(state.ids.length?"Add at least two countries to randomize.":"No countries selected. Add some first.",1);return;}
+  for(var i=state.ids.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=state.ids[i];state.ids[i]=state.ids[j];state.ids[j]=t;}
+  changed();toast("Your TOP has been shuffled.");
+}
+function resetTop(){
+  if(!state.ids.length){toast("Your ranking is already empty.",1);return;}
+  modal({title:"Reset current TOP?",text:"All selected countries will be removed from the editor. Saved tops are not affected.",ok:"RESET"}).then(function(ok){if(ok){state.ids=[];changed();toast("Ranking cleared.");}});
+}
+function newTop(){
+  function go(){state.ids=[];state.author=state.author;state.title="";state.editingId=null;$("#title").value="";changed();toast("Started a new TOP.");}
+  if(!state.ids.length&&!state.editingId){go();return;}
+  modal({title:"Start a new TOP?",text:"The editor will be cleared. Unsaved changes will be lost.",ok:"START NEW"}).then(function(ok){if(ok)go();});
+}
+function plainText(){
+  var s=shown(),l=["MY TOP OF JUNIOR SHONVISION — SEASON 02","",s.title,""];
+  state.ids.forEach(function(id,i){l.push((i+1)+". "+NAME[id]);});
+  l.push("","Created by: "+s.author);return l.join("\n");
+}
+function copyTop(){
+  if(!state.ids.length){toast("No countries selected. Add some first.",1);return;}
+  var t=plainText();
+  function fallback(){
+    try{var a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();var ok=document.execCommand("copy");a.remove();
+      toast(ok?"Ranking copied to clipboard.":"Copy failed. Your browser blocked clipboard access.",!ok);}catch(e){toast("Copy failed. Your browser blocked clipboard access.",1);}
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast("Ranking copied to clipboard.");},fallback);}else fallback();
+}
+
+/* ---------- Saved tops ---------- */
+function saveTop(){
+  if(!state.ids.length){toast("No countries selected. Add at least one country to save.",1);return;}
+  function commit(title){
+    state.title=title;$("#title").value=title;
+    var rec=saved.find(function(r){return r.id===state.editingId;}),isNew=!rec;
+    if(rec){rec.title=title;rec.author=state.author.trim();rec.countries=state.ids.slice();rec.updated=Date.now();}
+    else{rec={id:uid(),title:title,author:state.author.trim(),countries:state.ids.slice(),updated:Date.now()};saved.unshift(rec);state.editingId=rec.id;}
+    var ok=persistSaved();persistDraft();renderAll();
+    if(ok)toast(isNew?"Ranking saved successfully.":"Ranking updated successfully.");
+    else toast("Could not save: browser storage is unavailable or full.",1);
+  }
+  var t=state.title.trim();
+  if(t)commit(t);else modal({title:"Name your TOP",text:"Give this ranking a title before saving.",input:1,placeholder:"e.g. My Favorite Countries",ok:"SAVE"}).then(function(v){if(v)commit(v);});
+}
+function loadRecord(r,edit){
+  state.ids=r.countries.slice();state.author=r.author;state.title=r.title;state.editingId=edit?r.id:null;
+  $("#author").value=state.author;$("#title").value=state.title;changed();
+  document.getElementById(edit?"builder":"poster").scrollIntoView({behavior:"smooth"});
+  toast(edit?"Editing \""+r.title+"\".":"Opened \""+r.title+"\".");
+}
+function savedAction(act,id){
+  var r=saved.find(function(x){return x.id===id;});if(!r)return;
+  if(act==="open")loadRecord(r,false);
+  else if(act==="edit")loadRecord(r,true);
+  else if(act==="rename")modal({title:"Rename TOP",input:1,value:r.title,ok:"RENAME"}).then(function(v){
+    if(!v)return;r.title=v;r.updated=Date.now();
+    if(state.editingId===r.id){state.title=v;$("#title").value=v;}
+    var ok=persistSaved();persistDraft();renderAll();toast(ok?"Ranking renamed.":"Rename could not be stored.",!ok);});
+  else if(act==="delete")modal({title:"Delete this TOP?",text:"\""+r.title+"\" will be permanently removed from this browser.",ok:"DELETE"}).then(function(ok){
+    if(!ok)return;saved=saved.filter(function(x){return x.id!==id;});if(state.editingId===id)state.editingId=null;
+    persistSaved();persistDraft();renderAll();toast("Ranking deleted.");});
+}
+
+/* ---------- JSON export / import ---------- */
+function exportJSON(){
+  if(!saved.length){toast("No saved tops to export yet.",1);return;}
+  try{
+    var data={app:"junior-shonvision-season-02",version:1,exported:new Date().toISOString(),
+      rankings:saved.map(function(r){return{title:r.title,author:r.author,countries:r.countries.slice()};})};
+    download(new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),"junior-shonvision-season-02-rankings.json");
+    toast("JSON exported.");
+  }catch(e){toast("Export failed: "+e.message,1);}
+}
+function importJSON(file){
+  if(!file)return;
+  var rd=new FileReader();
+  rd.onerror=function(){toast("Invalid import file. It could not be read.",1);};
+  rd.onload=function(){
+    var d;try{d=JSON.parse(rd.result);}catch(e){toast("Invalid import file. It is not valid JSON.",1);return;}
+    var list=d&&Array.isArray(d.rankings)?d.rankings:null;
+    if(!list||d.app!=="junior-shonvision-season-02"){toast("Invalid import file. It is not a Season 02 rankings export.",1);return;}
+    var ok=[];list.forEach(function(r){
+      if(!r||typeof r!=="object"||typeof r.title!=="string")return;var ids=cleanIds(r.countries);
+      if(ids.length)ok.push({id:uid(),title:r.title.slice(0,50)||"Untitled TOP",author:String(r.author||"").slice(0,40),countries:ids,updated:Date.now()});
+    });
+    if(!ok.length){toast("Invalid import file. No valid rankings were found.",1);return;}
+    function add(){
+      saved=ok.concat(saved);var s=persistSaved();renderSaved();
+      toast(s?"JSON imported successfully: "+ok.length+" ranking"+(ok.length>1?"s":"")+" added.":"Import could not be stored in this browser.",!s);
+    }
+    if(saved.length)modal({title:"Import "+ok.length+" ranking"+(ok.length>1?"s":"")+"?",text:"They will be added next to your "+saved.length+" saved tops. Existing rankings will not be changed.",ok:"IMPORT"}).then(function(y){if(y)add();});
+    else add();
+  };
+  rd.readAsText(file);
+}
+
+/* ---------- PNG poster (Canvas) ---------- */
+var imgCache={};
+function loadFlag(c){
+  if(!imgCache[c])imgCache[c]=new Promise(function(res){
+    var im=new Image(),t=setTimeout(function(){res(null);},9000);
+    im.crossOrigin="anonymous";
+    im.onload=function(){clearTimeout(t);res(im);};
+    im.onerror=function(){clearTimeout(t);delete imgCache[c];res(null);};
+    im.src=flagUrl(c,320);
+  });
+  return imgCache[c];
+}
+function rr(x,a,b,w,h,r){x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath();}
+function blob(x,cx,cy,rx,ry,rot,c1,a){
+  x.save();x.translate(cx,cy);x.rotate(rot);x.scale(1,ry/rx);
+  var g=x.createRadialGradient(0,0,0,0,0,rx);g.addColorStop(0,c1);g.addColorStop(.6,c1);g.addColorStop(1,"rgba(25,25,50,0)");
+  x.globalAlpha=a;x.fillStyle=g;x.beginPath();x.arc(0,0,rx,0,7);x.fill();x.restore();
+}
+function fit(x,t,w,size,weight){var s=size;do{x.font=weight+" "+s+'px Manrope,"Segoe UI",Arial,sans-serif';s-=2;}while(x.measureText(t).width>w&&s>12);}
+function drawFlag(x,im,code,a,b,w,h){
+  x.save();rr(x,a,b,w,h,7);x.clip();
+  if(im){var r=w/h,ir=im.width/im.height,sw=im.width,sh=im.height,sx=0,sy=0;
+    if(ir>r){sw=im.height*r;sx=(im.width-sw)/2;}else{sh=im.width/r;sy=(im.height-sh)/2;}
+    x.drawImage(im,sx,sy,sw,sh,a,b,w,h);}
+  else{var g=x.createLinearGradient(a,b,a+w,b+h);g.addColorStop(0,"#4039A1");g.addColorStop(1,"#00636B");x.fillStyle=g;x.fillRect(a,b,w,h);
+    x.fillStyle="#fff";x.textAlign="center";x.textBaseline="middle";x.font="800 "+Math.round(h*.4)+"px sans-serif";x.fillText(code.toUpperCase(),a+w/2,b+h/2);}
+  x.restore();x.strokeStyle="rgba(255,255,255,.25)";x.lineWidth=1.5;rr(x,a,b,w,h,7);x.stroke();
+}
+function drawPoster(imgs){
+  var W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;var x=cv.getContext("2d"),s=shown(),n=state.ids.length;
+  x.fillStyle="#191932";x.fillRect(0,0,W,H);
+  blob(x,60,40,520,470,.5,"#4039A1",.95);blob(x,1080,330,330,300,0,"#7181C9",.5);
+  blob(x,1040,1330,560,460,-.4,"#00636B",.9);blob(x,0,1050,260,230,.3,"#38A878",.45);
+  x.textAlign="center";x.textBaseline="alphabetic";
+  x.fillStyle="#7181C9";x.font='800 26px Manrope,"Segoe UI",Arial,sans-serif';if("letterSpacing" in x)x.letterSpacing="6px";
+  x.fillText("JUNIOR SHONVISION 02 — BOO!",W/2,88);if("letterSpacing" in x)x.letterSpacing="0px";
+  x.fillStyle="#fff";fit(x,"MY TOP OF",900,70,800);x.fillText("MY TOP OF",W/2,175);
+  fit(x,"JUNIOR SHONVISION",940,104,800);x.fillText("JUNIOR SHONVISION",W/2,270);
+  var g=x.createLinearGradient(380,0,700,0);g.addColorStop(0,"#4039A1");g.addColorStop(1,"#7181C9");
+  x.fillStyle=g;rr(x,W/2-170,300,340,64,32);x.fill();
+  x.fillStyle="#fff";x.font='800 32px Manrope,"Segoe UI",Arial,sans-serif';if("letterSpacing" in x)x.letterSpacing="8px";x.fillText("SEASON 02",W/2+4,343);if("letterSpacing" in x)x.letterSpacing="0px";
+  fit(x,s.title,920,48,800);x.fillStyle="#fff";x.fillText(s.title,W/2,430);
+  fit(x,"by "+s.author,800,32,700);x.fillStyle="#9fb0f0";x.fillText("by "+s.author,W/2,476);
+  /* list */
+  var cols=n>7?2:1,perCol=Math.ceil(n/cols),top=520,avail=700,gap=14;
+  var rh=Math.min(92,(avail-gap*(perCol-1))/perCol),cw=cols===1?800:470,x0=cols===1?140:60;
+  var totalH=perCol*rh+(perCol-1)*gap,y0=top+(avail-totalH)/2;
+  state.ids.forEach(function(id,i){
+    var col=Math.floor(i/perCol),row=i%perCol,cx=cols===1?x0:x0+col*(cw+80),cy=y0+row*(rh+gap);
+    x.fillStyle="rgba(255,255,255,.08)";rr(x,cx,cy,cw,rh,rh/3);x.fill();
+    var d=rh*.62;x.fillStyle="#4039A1";x.beginPath();x.arc(cx+rh*.1+d/2+4,cy+rh/2,d/2,0,7);x.fill();
+    x.fillStyle="#fff";x.textAlign="center";x.textBaseline="middle";x.font="800 "+Math.round(d*.5)+"px Manrope,Arial,sans-serif";x.fillText(String(i+1),cx+rh*.1+d/2+4,cy+rh/2+1);
+    var fh=rh*.6,fw=fh*1.5,fx=cx+rh*.1+d+22;drawFlag(x,imgs[i],id,fx,cy+(rh-fh)/2,fw,fh);
+    x.textAlign="left";x.fillStyle="#fff";var tx=fx+fw+18,mw=cx+cw-tx-14;fit(x,NAME[id],mw,rh*.42,800);x.fillText(NAME[id],tx,cy+rh/2+1);
+  });
+  x.textBaseline="alphabetic";x.textAlign="center";x.fillStyle="#38A878";x.font='800 26px Manrope,"Segoe UI",Arial,sans-serif';if("letterSpacing" in x)x.letterSpacing="6px";
+  x.fillText("JUNIOR SHONVISION 02 — BOO!",W/2,1295);if("letterSpacing" in x)x.letterSpacing="0px";
+  return cv;
+}
+function downloadPoster(){
+  if(!state.ids.length){toast("No countries selected. Add at least one country to download a poster.",1);return;}
+  var btn=document.querySelector('[data-act="download"]');btn.disabled=true;btn.textContent="PREPARING...";
+  var ids=state.ids.slice();
+  Promise.all(ids.map(loadFlag)).then(function(imgs){
+    var missing=imgs.filter(function(i){return !i;}).length;
+    return(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){
+      var cv=drawPoster(imgs);
+      return new Promise(function(res,rej){
+        try{cv.toBlob(function(b){b?res([b,missing]):rej(new Error("The browser could not create the image."));},"image/png");}catch(e){rej(e);}
+      });
+    });
+  }).then(function(r){
+    download(r[0],"my-top-junior-shonvision-season-02.png");
+    if(r[1])toast("Flag image failed to load for "+r[1]+" "+(r[1]>1?"countries":"country")+". Placeholders were used in the PNG.",1);
+    toast("PNG downloaded.");
+  }).catch(function(e){toast("PNG generation failed: "+(e&&e.message?e.message:"unknown error"),1);})
+  .then(function(){btn.disabled=false;btn.textContent="DOWNLOAD MY TOP";});
+}
+
+/* ---------- Events ---------- */
+$("#cta").onclick=function(){document.getElementById("builder").scrollIntoView({behavior:"smooth"});};
+$("#search").oninput=renderAvail;
+$("#author").oninput=function(e){state.author=e.target.value;persistDraft();renderPreview();};
+$("#title").oninput=function(e){state.title=e.target.value;persistDraft();renderPreview();};
+$("#file").onchange=function(e){importJSON(e.target.files[0]);e.target.value="";};
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button");if(!t)return;
+  if(t.dataset.add)return addCountry(t.dataset.add);
+  if(t.dataset.rm)return removeCountry(t.dataset.rm);
+  if(t.dataset.mv){var li=t.closest("li"),i=+li.dataset.i,j=t.dataset.mv==="up"?i-1:i+1;move(i,j);
+    var nb=document.querySelector('#ranklist li[data-i="'+j+'"] [data-mv="'+t.dataset.mv+'"]')||document.querySelector('#ranklist li[data-i="'+j+'"] [data-mv]');if(nb)nb.focus();return;}
+  if(t.dataset.sv)return savedAction(t.dataset.sv,t.closest(".sv").dataset.id);
+  var a=t.dataset.act;if(!a)return;
+  ({save:saveTop,random:randomize,copy:copyTop,reset:resetTop,"new":newTop,download:downloadPoster,"export":exportJSON,"import":function(){$("#file").click();}})[a]();
+});
+/* Native drag-and-drop reordering */
+var dragIdx=null;
+document.addEventListener("dragstart",function(e){var li=e.target.closest&&e.target.closest("#ranklist li");if(!li)return;dragIdx=+li.dataset.i;li.classList.add("drag");try{e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",String(dragIdx));}catch(_){}});
+document.addEventListener("dragover",function(e){var li=e.target.closest&&e.target.closest("#ranklist li");if(!li||dragIdx===null)return;e.preventDefault();
+  document.querySelectorAll("#ranklist .over").forEach(function(n){n.classList.remove("over");});li.classList.add("over");});
+document.addEventListener("drop",function(e){var li=e.target.closest&&e.target.closest("#ranklist li");if(!li||dragIdx===null)return;e.preventDefault();var to=+li.dataset.i,from=dragIdx;dragIdx=null;move(from,to);});
+document.addEventListener("dragend",function(){dragIdx=null;document.querySelectorAll("#ranklist .drag,#ranklist .over").forEach(function(n){n.classList.remove("drag","over");});});
+
+/* ---------- Init ---------- */
+loadAll();
+$("#author").value=state.author;$("#title").value=state.title;
+renderAll();
+})();
+</script>
+</body>
+</html>
